@@ -46,7 +46,7 @@
     <QtModules>core;gui;network;sql;webchannel;webengine;webenginewidgets;widgets;xml</QtModules>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <QtInstall>5.15.2_msvc2019_64</QtInstall>
+    <QtInstall>msvc2017_64</QtInstall>
     <QtModules>core;gui;network;sql;webchannel;webengine;webenginewidgets;widgets;xml</QtModules>
   </PropertyGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
@@ -83,8 +83,12 @@
     <ClCompile Include="basicwindow.cpp" />
     <ClCompile Include="CCMainWindow.cpp" />
     <ClCompile Include="CommonUtils.cpp" />
+    <ClCompile Include="CustomMenu.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NotifyManager.cpp" />
+    <ClCompile Include="QClickLabel.cpp" />
+    <ClCompile Include="SkinWindow.cpp" />
+    <ClCompile Include="SysTray.cpp" />
     <ClCompile Include="titlebar.cpp" />
     <ClCompile Include="UserLogin.cpp" />
   </ItemGroup>
@@ -93,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="CCMainWindow.ui" />
+    <QtUic Include="SkinWindow.ui" />
     <QtUic Include="UserLogin.ui" />
   </ItemGroup>
   <ItemGroup>
@@ -109,7 +114,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommonUtils.h" />
+    <QtMoc Include="CustomMenu.h" />
+    <QtMoc Include="SysTray.h" />
+    <QtMoc Include="QClickLabel.h" />
+    <QtMoc Include="SkinWindow.h" />
     <QtMoc Include="UserLogin.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
